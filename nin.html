@@ -16,736 +16,6 @@
     <script src="./mObywatel 2.0_files/sw.js.pobrane"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <meta name="theme-color" content="#FFFFFF">
-    <meta name="viewport" content="width=device-width">
-
-    <title>mObywatel 2.0</title>
-
-    <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#fff">
-    <meta name="next-head-count" content="5">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="https://v2dejm65o0n5id4xylvc.ct8.pl/manifest.json">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="./mObywatel 2.0_files/all.min.css" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 100;
-            src: url(/assets/roboto_light.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(/assets/roboto_regular.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 400;
-            src: url(/assets/roboto_medium.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: italic;
-            font-weight: 400;
-            src: url(/assets/roboto_medium_italic.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(/assets/roboto_bold.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 700;
-            src: url(/assets/roboto_black.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 900;
-            src: url(/assets/roboto_medium_numbers.ttf) format("truetype");
-        }
-
-        :root {
-            --blue-active: #064792;
-        }
-
-        * {
-            user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            box-sizing: border-box;
-        }
-
-        img {
-            pointer-events: none;
-        }
-
-        .navbar {
-            overflow: hidden;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 9999;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 9999;
-        }
-
-        @supports (-webkit-touch-callout: none) {
-            .dzit {
-                margin-bottom: 1.0rem;
-            }
-        }
-
-        body, html {
-            height: 100%;
-            overscroll-behavior-y: contain;
-            padding: 0;
-            margin: 0;
-            font-family: Roboto, sans-serif;
-            background: #f5f6fb;
-            color: #131419;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .spinner {
-            width: 1em;
-            height: 1em;
-            border-radius: 50%;
-            border: .2em solid #dfdfdf;
-            border-right-color: #dd1b42;
-            animation: spinner-d3wgkg 1s linear infinite;
-        }
-
-        .Login_container_1 {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .Login_main_1 {
-            flex: 1 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .Login_logoTop {
-            position: absolute;
-            top: 20px;
-        }
-
-        .Login_changePassword_1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #dbebfa;
-            border-radius: 50%;
-            width: 6em;
-            height: 6em;
-        }
-
-        .Login_changePasswordIcon {
-            color: #075094;
-            width: 4em;
-            height: 4em;
-        }
-
-        .Login_bioLogin {
-            background-color: #dbebfa;
-            text-align: center;
-            margin: 10px 0;
-            line-height: 0;
-            border-radius: 10em;
-            padding: .2em 1em;
-        }
-
-        .tekst_biometeria {
-            color: #075094;
-            font-size: .8em;
-            font-weight: bold;
-        }
-
-        .Login_passwordSection {
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            width: 100%;
-            padding: 15px;
-            border-radius: 15px;
-            max-width: 400px;
-            margin: 20px 0;
-        }
-
-        .Login_passwordLabel {
-            color: #696978;
-            font-size: .8em;
-            font-weight: 300;
-            line-height: 0;
-            text-align: left;
-        }
-
-        .Login_passwordInput {
-            padding: 1em;
-            font-size: 1em;
-            border: 1px solid #56595b;
-            background-color: #fff;
-            border-radius: .2em;
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: .5em;
-        }
-
-        .Login_passwordInput::placeholder {
-            color: #696978;
-        }
-
-        .Login_forgotPassword {
-            color: #075094;
-            text-align: right;
-            font-size: .8em;
-            font-weight: 300;
-            line-height: 0;
-        }
-
-        .Login_passwordContainer {
-            position: relative;
-            width: 100%;
-        }
-
-        .Login_eyeIcon__A9_oq {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-35%);
-            cursor: pointer;
-        }
-
-        .Login_submitButton {
-            width: 100%;
-            padding: .6em;
-            background-color: #024a94;
-            color: #fff;
-            border: none;
-            border-radius: 5em;
-            cursor: pointer;
-            margin-top: 5em;
-            font-size: 1em;
-            font-weight: 600;
-            line-height: 0;
-        }
-
-        .Login_submitButton:disabled {
-            background-color: #6b9bc9;
-            cursor: not-allowed;
-        }
-
-        .Login_footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 400px;
-            margin-top: 20px;
-        }
-
-        .Login_footerImages {
-            display: flex;
-            gap: 10px;
-        }
-
-        .Login_versionText {
-            font-size: 12px;
-            font-weight: 300;
-            color: #9c9da2;
-        }
-
-        .error-message {
-            color: #dd1b42;
-            font-size: 0.85em;
-            margin-top: 0.5em;
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .Login_container__DPp2Z {
-                padding: 10px;
-            }
-
-            .Login_main__3PNdJ {
-                padding: 0 10px;
-            }
-
-            .Login_passwordSection {
-                width: 100%;
-            }
-
-            .Login_submitButton {
-                width: calc(100% - 20px);
-            }
-        }
-    </style>
-
-    <link rel="apple-touch-icon" href="./dowodnowy_files/apple-touch-icon.png">
-    
-</head>
-<body>
-    <div class="dynamic-panel">
-        <div class="Login_container_1">
-            <main class="Login_main_1">
-                <img src="./mObywatel 2.0_files/coi_common_ic_mobywatel_horizontal_logo_text.svg" alt="Logo" class="Login_logoTop">
-
-                <div class="Login_changePassword_1">
-                    <br><br><br><br>
-                    <img src="./mObywatel 2.0_files/aa008_change_password_blue.svg" alt="Change Password" class="Login_changePasswordIcon">
-                </div>
-
-                <p style="font-weight: 500; font-size: 5vw; margin-bottom: 1em; margin-top: 2em; font-weight: bold;">Wpisz hasło</p>
-                <div class="Login_bioLogin">
-                    <p class="tekst_biometeria">Logowanie biometrią</p>
-                </div>
-                <div class="Login_passwordSection">
-                    <p class="Login_passwordLabel">Hasło</p>
-                    <div class="Login_passwordContainer">
-                        <input type="password" id="passwordInput" placeholder="Wpisz hasło" class="Login_passwordInput">
-                    </div>
-                    <p class="error-message" id="errorMessage">Nieprawidłowe hasło</p>
-                    <p class="Login_forgotPassword">Nie pamiętam hasła</p>
-                </div>
-            </main>
-            <button class="Login_submitButton" id="loginButton">
-                <p>Zaloguj się</p>
-            </button>
-            <footer class="Login_footer">
-                <div class="Login_footerImages">
-                    <img src="./mObywatel 2.0_files/coi_common_ui_ic_coi_mobywatel_logo.svg" alt="Footer Image 1" style="width: 5em; height: auto;">
-                    <img src="./mObywatel 2.0_files/coi_common_ui_ic_mc_mobywatel_logo.svg" alt="Footer Image 2" style="width: 4em; height: auto;">
-                </div>
-                <p class="Login_versionText">wersja 4.41.2 (8)</p>
-            </footer>
-        </div>
-    </div>
-
-    <script>
-        const CORRECT_PASSWORD = "Dupa<!DOCTYPE html>
-<html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script>
-    if(location.protocol == 'http:') location.protocol = 'https:';
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered', reg))
-        .catch(err => console.error('Service Worker **not** registered', err));
-    }
-    else {
-      console.warn('Service Worker not supported in this browser');
-    }    
-    </script>
-
-    <script src="./mObywatel 2.0_files/sw.js.pobrane"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta name="theme-color" content="#000000">
-    <meta name="viewport" content="width=device-width">
-
-    <title>mObywatel 2.0</title>
-
-    <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#000000">
-    <meta name="next-head-count" content="5">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="https://v2dejm65o0n5id4xylvc.ct8.pl/manifest.json">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="./mObywatel 2.0_files/all.min.css" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 100;
-            src: url(/assets/roboto_light.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            src: url(/assets/roboto_regular.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 400;
-            src: url(/assets/roboto_medium.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: italic;
-            font-weight: 400;
-            src: url(/assets/roboto_medium_italic.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            src: url(/assets/roboto_bold.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 700;
-            src: url(/assets/roboto_black.ttf) format("truetype");
-        }
-
-        @font-face {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 900;
-            src: url(/assets/roboto_medium_numbers.ttf) format("truetype");
-        }
-
-        :root {
-            --blue-active: #3a8dff;
-        }
-
-        * {
-            user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            box-sizing: border-box;
-        }
-
-        img {
-            pointer-events: none;
-        }
-
-        body, html {
-            height: 100%;
-            overscroll-behavior-y: contain;
-            padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Roboto', sans-serif;
-            background: #000000;
-            color: #ffffff;
-        }
-
-        body {
-            background-color: #000000;
-            width: 100%;
-            height: 100vh;
-            position: fixed;
-            overflow: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .login-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            padding: 40px 20px 20px 20px;
-            background: #000000;
-        }
-
-        .logo-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 60px;
-        }
-
-        .logo-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 14px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-text {
-            font-size: 28px;
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .welcome-title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-            letter-spacing: -0.5px;
-        }
-
-        .welcome-subtitle {
-            font-size: 17px;
-            font-weight: 400;
-            color: #8e8e93;
-            margin: 0 0 40px 0;
-        }
-
-        .password-section {
-            background-color: #1c1c1e;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-
-        .password-label {
-            color: #8e8e93;
-            font-size: 15px;
-            font-weight: 400;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .password-input-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .password-input {
-            width: 100%;
-            padding: 14px;
-            font-size: 17px;
-            border: 2px solid #3a8dff;
-            background-color: transparent;
-            border-radius: 10px;
-            color: #ffffff;
-            font-family: inherit;
-        }
-
-        .password-input::placeholder {
-            color: #48484a;
-        }
-
-        .password-input:focus {
-            outline: none;
-            border-color: #3a8dff;
-        }
-
-        .password-input.error {
-            border-color: #ff3b30;
-        }
-
-        .eye-icon {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            filter: invert(1);
-            opacity: 0.6;
-        }
-
-        .forgot-password {
-            color: #3a8dff;
-            font-size: 15px;
-            font-weight: 400;
-            margin-top: 12px;
-            display: block;
-            text-align: left;
-        }
-
-        .error-message {
-            color: #ff3b30;
-            font-size: 14px;
-            margin-top: 8px;
-            display: none;
-        }
-
-        .login-button {
-            width: 100%;
-            padding: 16px;
-            background-color: #3a8dff;
-            color: #ffffff;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            margin-top: auto;
-            margin-bottom: 20px;
-            font-size: 17px;
-            font-weight: 600;
-            font-family: inherit;
-            transition: opacity 0.2s;
-        }
-
-        .login-button:active {
-            opacity: 0.8;
-        }
-
-        .login-button:disabled {
-            background-color: #48484a;
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
-
-        @supports (-webkit-touch-callout: none) {
-            .login-container {
-                padding-bottom: 40px;
-            }
-        }
-    </style>
-
-    <link rel="apple-touch-icon" href="./dowodnowy_files/apple-touch-icon.png">
-    
-</head>
-<body>
-    <div class="login-container">
-        <div class="logo-header">
-            <div class="logo-icon">
-                <img src="new_logo.png" alt="mObywatel Logo">
-            </div>
-            <span class="logo-text">mObywatel</span>
-        </div>
-
-        <div class="main-content">
-            <h1 class="welcome-title">Dzień dobry!</h1>
-            <p class="welcome-subtitle">Zaloguj się do aplikacji.</p>
-
-            <div class="password-section">
-                <label class="password-label">Hasło</label>
-                <div class="password-input-container">
-                    <input type="password" id="passwordInput" placeholder="" class="password-input">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E" alt="Show password" class="eye-icon" id="eyeIcon">
-                </div>
-                <p class="error-message" id="errorMessage">Nieprawidłowe hasło</p>
-                <a href="#" class="forgot-password">Nie pamiętasz hasła?</a>
-            </div>
-
-            <button class="login-button" id="loginButton">Zaloguj się</button>
-        </div>
-    </div>
-
-    <script>
-        // Set your password here
-        const CORRECT_PASSWORD = "twoje_haslo"; // Change this to your desired password
-        
-        const passwordInput = document.getElementById('passwordInput');
-        const loginButton = document.getElementById('loginButton');
-        const errorMessage = document.getElementById('errorMessage');
-        const eyeIcon = document.getElementById('eyeIcon');
-
-        function checkPassword() {
-            const enteredPassword = passwordInput.value;
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Password is correct - redirect to dashboard
-                window.location.href = 'dashboard.html';
-            } else {
-                // Password is incorrect - show error
-                errorMessage.style.display = 'block';
-                passwordInput.classList.add('error');
-                
-                // Clear error after 3 seconds
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                    passwordInput.classList.remove('error');
-                }, 3000);
-            }
-        }
-
-        // Login button click
-        loginButton.addEventListener('click', checkPassword);
-
-        // Enter key press
-        passwordInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-        // Clear error when user starts typing
-        passwordInput.addEventListener('input', function() {
-            errorMessage.style.display = 'none';
-            passwordInput.classList.remove('error');
-        });
-
-        // Toggle password visibility
-        eyeIcon.addEventListener('click', function() {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
-            }
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script>
-    if(location.protocol == 'http:') location.protocol = 'https:';
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered', reg))
-        .catch(err => console.error('Service Worker **not** registered', err));
-    }
-    else {
-      console.warn('Service Worker not supported in this browser');
-    }    
-    </script>
-
-    <script src="./mObywatel 2.0_files/sw.js.pobrane"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <meta name="theme-color" content="#101318">
     <meta name="viewport" content="width=device-width">
 
@@ -857,19 +127,21 @@
             flex-direction: column;
             padding: 40px 20px 20px 20px;
             background: #101318;
+            align-items: center;
         }
 
         .logo-header {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .logo-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 14px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             overflow: hidden;
             flex-shrink: 0;
         }
@@ -881,46 +153,72 @@
         }
 
         .logo-text {
-            font-size: 28px;
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: -0.5px;
+            font-size: 24px;
+            font-weight: 400;
+            color: #666666;
+            letter-spacing: -0.3px;
         }
 
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .key-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #d0e4f5 0%, #e8f2fa 100%);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .key-icon svg {
+            width: 60px;
+            height: 60px;
         }
 
         .welcome-title {
-            font-size: 36px;
-            font-weight: 700;
+            font-size: 32px;
+            font-weight: 600;
             color: #ffffff;
-            margin: 0 0 8px 0;
+            margin: 0 0 24px 0;
             letter-spacing: -0.5px;
         }
 
-        .welcome-subtitle {
-            font-size: 17px;
-            font-weight: 400;
-            color: #8e8e93;
-            margin: 0 0 40px 0;
+        .biometric-button {
+            background-color: #e8f2fa;
+            color: #3a8dff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            cursor: pointer;
         }
 
         .password-section {
-            background-color: #1c1c1e;
+            background-color: #ffffff;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 16px;
+            width: 100%;
+            max-width: 600px;
         }
 
         .password-label {
-            color: #8e8e93;
-            font-size: 15px;
+            color: #666666;
+            font-size: 14px;
             font-weight: 400;
             margin-bottom: 8px;
             display: block;
+            text-align: left;
         }
 
         .password-input-container {
@@ -931,16 +229,16 @@
         .password-input {
             width: 100%;
             padding: 14px;
-            font-size: 17px;
-            border: 2px solid #3a8dff;
-            background-color: transparent;
-            border-radius: 10px;
-            color: #ffffff;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            background-color: #ffffff;
+            border-radius: 8px;
+            color: #000000;
             font-family: inherit;
         }
 
         .password-input::placeholder {
-            color: #48484a;
+            color: #999999;
         }
 
         .password-input:focus {
@@ -960,17 +258,16 @@
             width: 24px;
             height: 24px;
             cursor: pointer;
-            filter: invert(1);
-            opacity: 0.6;
+            opacity: 0.4;
         }
 
         .forgot-password {
             color: #3a8dff;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 400;
             margin-top: 12px;
             display: block;
-            text-align: left;
+            text-align: right;
         }
 
         .error-message {
@@ -1022,24 +319,33 @@
             <div class="logo-icon">
                 <img src="new_logo.png" alt="mObywatel Logo">
             </div>
-            <span class="logo-text">mObywatel</span>
+            <span class="logo-text">mObywatel 2.0</span>
         </div>
 
         <div class="main-content">
-            <h1 class="welcome-title">Dzień dobry!</h1>
-            <p class="welcome-subtitle">Zaloguj się do aplikacji.</p>
+            <div class="key-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="#3a8dff" stroke-width="2"/>
+                    <path d="M12 12L19 5M19 5H15M19 5V9" stroke="#3a8dff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <h1 class="welcome-title">Wpisz hasło</h1>
+            
+            <button class="biometric-button">Logowanie biometrią</button>
 
             <div class="password-section">
                 <label class="password-label">Hasło</label>
                 <div class="password-input-container">
-                    <input type="password" id="passwordInput" placeholder="" class="password-input">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E" alt="Show password" class="eye-icon" id="eyeIcon">
+                    <input type="password" id="passwordInput" placeholder="Wpisz hasło" class="password-input">
+                    <svg class="eye-icon" id="eyeIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#666" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="3" stroke="#666" stroke-width="2"/>
+                    </svg>
                 </div>
                 <p class="error-message" id="errorMessage">Nieprawidłowe hasło</p>
-                <a href="#" class="forgot-password">Nie pamiętasz hasła?</a>
+                <a href="#" class="forgot-password">Nie pamiętam hasła</a>
             </div>
-
-            <button class="login-button" id="loginButton">Zaloguj się</button>
         </div>
     </div>
 
@@ -1094,48 +400,6 @@
             } else {
                 passwordInput.type = 'password';
             }
-        });
-    </script>
-</body>
-</html>089"; 
-        
-        const passwordInput = document.getElementById('passwordInput');
-        const loginButton = document.getElementById('loginButton');
-        const errorMessage = document.getElementById('errorMessage');
-
-        function checkPassword() {
-            const enteredPassword = passwordInput.value;
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Password is correct - redirect to dashboard
-                window.location.href = 'dashboard.html';
-            } else {
-                // Password is incorrect - show error
-                errorMessage.style.display = 'block';
-                passwordInput.style.borderColor = '#dd1b42';
-                
-                // Clear error after 3 seconds
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                    passwordInput.style.borderColor = '#56595b';
-                }, 3000);
-            }
-        }
-
-        // Login button click
-        loginButton.addEventListener('click', checkPassword);
-
-        // Enter key press
-        passwordInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-        // Clear error when user starts typing
-        passwordInput.addEventListener('input', function() {
-            errorMessage.style.display = 'none';
-            passwordInput.style.borderColor = '#56595b';
         });
     </script>
 </body>
