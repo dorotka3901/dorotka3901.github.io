@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>mObywatel 2.0</title>
+    <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
+    <meta name="theme-color" content="#101318">
+    <meta name="next-head-count" content="5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="./dashboard_files/sw.js.pobrane"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="https://ib05lvtzg55be6a6c6kpg3.ct8.pl/apka-3-0/manifest.json">
+    <link href="./dashboard_files/css" rel="stylesheet">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    
+    <script>
+        window.addEventListener("load", function() {
+            if ("standalone" in window.navigator && window.navigator.standalone) {
+                var a = document.getElementsByTagName("a");
+                for (var i = 0; i < a.length; i++) {
+                    a[i].addEventListener("click", function(event) {
+                        var newLocation = this.href;
+                        event.preventDefault();
+                        window.location = newLocation;
+                    }, false);
+                }
+            }
+            
+            setTimeout(function() {
+                window.scrollTo(0, 1);
+            }, 0);
+        });
+    </script>
+    
+    <style>
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 100;
+            src: url(/assets/roboto_light.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            src: url(/assets/roboto_regular.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 400;
+            src: url(/assets/roboto_medium.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: 400;
+            src: url(/assets/roboto_medium_italic.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            src: url(/assets/roboto_bold.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 700;
+            src: url(/assets/roboto_black.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            src: url(/assets/roboto_medium_numbers.ttf) format("truetype");
+        }
+
+        :root {
+            --blue-active: #3a8dff;
+        }
+
+        * {
+            user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        img {
+            pointer-events: none;
+        }
+
+        body, html {
+            height: 100%;
+            overscroll-behavior-y: contain;
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Roboto', sans-serif;
+            background: #101318;
+            color: #ffffff;
+        }
+
+        body {
+            background-color: #101318;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #101318;
+        }
+
+        .header-logo {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .notification-icon {
+            width: 28px;
+            height: 28px;
+            filter: invert(1);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            padding-bottom: 100px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 34px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+        }
+
+        .header-button {
+            color: var(--blue-active);
+            font-size: 17px;
+            font-weight: 400;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .document-card {
+            background: linear-gradient(135deg, #1a5fb8 0%, #2b7de9 100%);
+            border-radius: 24px;
+            padding: 20px;
+            min-height: 240px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+            overflow: hidden;
+        }
+
+        .document-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 12px,
+                rgba(255, 255, 255, 0.04) 12px,
+                rgba(255, 255, 255, 0.04) 24px
+            );
+            pointer-events: none;
+        }
+
+        .document-card:active {
+            transform: scale(0.97);
+        }
+
+        .document-card.full-width {
+            grid-column: span 2;
+        }
+
+        .document-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .document-icon img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        .document-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            bottom: 0;
+            background-color: #1c1c1e;
+            border-top: 0.5px solid #38383a;
+            z-index: 99;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            left: 0;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .nav-tab {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-tab img {
+            height: 26px;
+            width: 26px;
+            filter: invert(1);
+        }
+
+        .nav-tab span {
+            font-size: 11px;
+            font-weight: 500;
+            color: #8e8e93;
+        }
+
+        .nav-tab.active img {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(195deg);
+        }
+
+        .nav-tab.active span {
+            color: var(--blue-active);
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .bottom-nav {
+                padding-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 30px;
+            }
+
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .document-card.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-logo">
+                <img src="new_logo.png" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+            </div>
+            <img src="./dashboard_files/ab013_notifications.svg" alt="Notifications" class="notification-icon">
+        </header>
+
+        <main class="main-content">
+            <div class="section-header">
+                <h1 class="section-title">Dokumenty</h1>
+                <div class="header-actions">
+                    <button class="header-button">Dostosuj</button>
+                    <button class="header-button">Dodaj</button>
+                </div>
+            </div>
+
+            <div class="documents-grid">
+                <div class="document-card full-width" onclick="window.location.href='dowodnowy.html';">
+                    <div class="document-icon">
+                        <img src="new_logo_nobg.png" alt="ID">
+                    </div>
+                    <h2 class="document-title">mDowód</h2>
+                </div>
+            </div>
+        </main>
+
+        <div class="bottom-nav">
+            <div class="nav-tab active" onclick="window.location.href='dashboard.html';">
+                <img src="./dashboard_files/ab001_home.svg" alt="Start">
+                <span>Dokumenty</span>
+            </div>
+            <div class="nav-tab" onclick="window.location.href='services.html';">
+                <img src="./dashboard_files/ac001_services.svg" alt="Usługi">
+                <span>Usługi</span>
+            </div>
+            <div class="nav-tab" onclick="window.location.href='qr.html';">
+                <img src="./dashboard_files/ai001_scanner_qr.svg" alt="QR">
+                <span>Kod QR</span>
+            </div>
+            <div class="nav-tab" onclick="window.location.href='more.html';">
+                <img src="./dashboard_files/ab010_more.svg" alt="Więcej">
+                <span>Więcej</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
