@@ -18,6 +18,10 @@
 
     <noscript data-n-css=""></noscript>
     <style>
+        :root {
+            --blue-active: #3a8dff;
+        }
+
       
         body {
             overscroll-behavior: contain;
@@ -137,73 +141,139 @@
         * {
             -webkit-tap-highlight-color: transparent;
         }
-        .BottomNav_bottomNav__JQdpA {
+        /* Bottom Navigation */
+        .bottom-nav {
             width: 100%;
-            height: 90px;
+            height: auto;
             position: fixed;
             bottom: 0;
-            background-color: #1f2227;
-            border-top: 1px solid #d6d6d6;
             z-index: 99;
             display: flex;
             justify-content: space-around;
             align-items: center;
             left: 0;
-			color: #e5e7eb;
+            padding: 12px 0;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+            background: #101318;
         }
 
-        .BottomNav_bnTab__WzkWH {
+        .nav-tab {
             width: 25%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding-top: 10px;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            padding: 8px 0;
         }
 
-        .BottomNav_bnTab__WzkWH img {
-            height: 24px;
-            margin-bottom: 4px;
+        .nav-tab img {
+            height: 36px;
+            width: 32px;
+            filter: invert(1);
         }
 
-        .BottomNav_bnTab__WzkWH span {
-            font-size: .7em;
-            font-weight: 300;
+        .nav-tab span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #8e8e93;
         }
 
-        .BottomNav_activeText__6iAIF {
+        .nav-tab.active img {
+            filter: invert(0.5) sepia(1) saturate(5) hue-rotate(195deg);
+        }
+
+        .nav-tab.active span {
             color: var(--blue-active);
         }
 
-        .BottomNav_bnTab__WzkWH img:active,
-        .BottomNav_bnTab__WzkWH img:focus,
-        .BottomNav_bnTab__WzkWH:active,
-        .BottomNav_bnTab__WzkWH:focus {
-            outline: none;
-            box-shadow: none;
+        @supports (-webkit-touch-callout: none) {
+            .bottom-nav {
+                padding-bottom: calc(12px + 20px);
+            }
         }
+		#rogo {
+			background-color: transparent;
+		}
 
-        .BottomNav_bnTab__WzkWH {
-            -webkit-tap-highlight-color: transparent;
-        }
 		#rogo .content {
 			background-color: #1f2227;
 			color: #e5e7eb;
-		
-		#rogo {
-    		background-color: #1f2227;
 		}
 
-		#rogo .content {
-    		background-color: #1f2227;
+		#rogo .content .main {
+			color: #ffffff;
 		}
-		#rogo .main {
-    		color: #ffffff;
+
+		#rogo .content .info {
+			color: #9ca3af;
 		}
-		#rogo .info {
-    		color: #9ca3af;
+		
+		section.collapsible.buto {
+			background-color: #1f2227 !important;
+			color: #e5e7eb;
 		}
+
+		section.collapsible.buto {
+			min-height: 78px;                
+			box-sizing: border-box;
+		}
+		
+		/* Quick actions under "Dokument ważny" */
+		
+		.quick-actions {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 48px;
+			width: 100%;
+			margin: 16px 0 24px;
+		}
+
+		.quick-action {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 80px;
+			gap: 12px;
+			font-size: 11px;
+			font-weight: 400;
+			color: #cbd5e1;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.quick-action span {
+			max-width: 80px;
+			line-height: 1.2;
+		}
+
+		.quick-icon {
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: #1f2227;
+			box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+		}
+
+		.quick-icon img {
+			width: 18px;
+			height: 18px;
+			object-fit: contain;
+			display: block;
+		}
+		
+		.quick-action:last-child .quick-icon img {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;   
+			display: block;
+		}
+		
     </style><link rel="stylesheet" href="./dowodnowy_files/dowodnowy.css">
 <script src="./dowodnowy_files/jquery-3.6.0.min.js.pobrane"></script>
 <style>
@@ -222,40 +292,11 @@
         <span style="font-family: 'Inter'; font-weight: 900; position: relative; left: -6%; color: #ffffff;">mDowód</span>
         <img style="width: 25px; height: 25px;" src="./dowodnowy_files/madziamojakotka123.svg" alt="">
     </header>
-   <div class="info-section" id="info-section" style="margin-left: 20px; margin-right: 20px;">
-    <p>
-      <img src="./dowodnowy_files/normal_u391.svg" alt="Info Icon">
-      Kiedy nie skorzystasz z mDowodu
-    </p>
-    <p>
-      Gdy załatwiasz sprawę w banku (do 31 sierpnia), wyjeżdżasz za granicę i składasz wniosek o dowód osobisty.
-    </p>
-    <div class="center-icons">
-      <img src="./dowodnowy_files/normal_u394.svg" alt="Left Icon" id="left-icon">
-      <img src="./dowodnowy_files/normal_u393.svg" alt="Right Icon" id="right-icon">
-    </div>
-  </div>
-  <div class="info-section blue" id="blue-section" style="display: none; margin-left: 20px; margin-right: 20px;">
-    <p>
-      <img src="./dowodnowy_files/normal_u391.svg" alt="Info Icon">
-      A kiedy skorzystasz z mDowodu
-    </p>
-    <p>
-      We wszystkich innych sytuacjach – na przykład w urzędzie, sądzie, przychodni, na poczcie czy u notariusza.
-    </p>
-    <div class="center-icons">
-      <img src="./dowodnowy_files/normal_u393.svg" alt="Right Icon" id="right-icon-blue">
-      <img src="./dowodnowy_files/normal_u394.svg" alt="Left Icon" id="left-icon-blue">
-    </div>
-    <div class="close-icon" id="close-icon">
-      <img src="./dowodnowy_files/normal_u408.svg" alt="Close Icon">
-    </div>
-  </div>
-    <p class="czas" style="color:#ffffff;">Czas: 20:49:19 3.03.2025</p>
+    <p class="czas" style="color:#ffffff;margin: 16px 0;">Czas: 20:49:19 3.03.2025</p>
     <script src="./dowodnowy_files/timenew.js.pobrane"></script>
     <main>
         <section id="lew">
-            <img src="./dowodnowy_files/image0.jpg" class="object-contain w-full rounded-lg photo" style="margin: 0;" alt="Brak Zdjęcia">
+            <img src="./dowodnowy_files/image1.jpg" class="object-contain w-full rounded-lg photo" style="margin: 0;" alt="Brak Zdjęcia">
 
             <br>
       <img src="./dowodnowy_files/flaga.gif" alt="flaga" id="flaga" style="margin: 0;">
@@ -282,20 +323,25 @@
         <p>Dokument ważny</p>
     </section>
 
+	<!-- Circular Icons -->
+	<div class="quick-actions">
+    <div class="quick-action">
+        <div class="quick-icon">
+            <img src="./dowodnowy_files/checkbo.png" alt="">
+        </div>
+        <span>Potwierdź<br>swoje dane</span>
+    </div>
+
+    <div class="quick-action" onclick="confirmDelete()">
+        <div class="quick-icon">
+            <img src="./dowodnowy_files/kosz.png" alt="">
+        </div>
+        <span>Usuń<br>dokument</span>
+    </div>
+</div>
+
 
     <!-- Sekcja z potwierdz swoje dane i dane dokumentu + zdjecia -->
-    <a class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: #1f2227; color: #e5e7eb;; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-        <img src="./dowodnowy_files/checkbo.png" alt="checkbox">
-        <p style="margin-left: 10px; font-weight: bold;">Potwierdź swoje dane</p>
-        <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
-    </a>
-
-    <div class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: #1f2227; color: #e5e7eb;; color: #e5e7eb;
-; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" onclick="wybordokumentumenu()">
-        <img src="./dowodnowy_files/card.png" alt="card">
-        <p style="margin-left: 10px; font-weight: bold;">Dane dokumentu</p>
-        <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
-    </div>    
     <section class="collapsible buto" id="lo" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: #1f2227; color: #e5e7eb;; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
         
         <p style="margin-left: -7px; font-weight: bold;">Twoje dodatkowe dane</p>
@@ -350,44 +396,12 @@
     </div>
     <button id="aktualizuj" href="dashboard.html">Aktualizuj</button> 
 </div>
-
-
-
-
     <link rel="stylesheet" href="./dowodnowy_files/all.min.css">
-    <a class="buto" style="cursor: pointer; display: flex; align-items: left; padding: 10px 20px; border-radius: 10px; background-color: #1f2227; color: #e5e7eb;; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-decoration: none; font-family: Arial, sans-serif;" onclick="confirmDelete()">
-    <img style="margin-left: -7px;" src="./dowodnowy_files/kosz.png" alt="checkbox">
-        <span style="color: red; font-size: 16px; font-weight: 550;">Usuń dokument</span>
-    </a>
   <br>
   <br>
   <br>
   <br>
   <br>
-
-   
-     <div class="BottomNav_bottomNav__JQdpA">
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;dashboard.html&#39;">
-            <img src="./dowodnowy_files/b001_home.svg" alt="dashboard">
-            <span>Start</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;documents.html&#39;">
-            <img src="./dowodnowy_files/b002_framed_person.svg" alt="documents">
-            <span>Dokumenty</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;services.html&#39;">
-            <img src="./dowodnowy_files/ac001_services.svg" alt="services">
-            <span>Usługi</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;qr.html&#39;">
-            <img src="./dowodnowy_files/ai001_scanner_qr.svg" alt="qr">
-            <span>Kod QR</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;more.html&#39;">
-            <img src="./dowodnowy_files/ab010_more.svg" alt="more">
-            <span class="BottomNav_activeText__6iAIF">Więcej</span>
-        </div>
-    </div>
     <script src="./dowodnowy_files/rozwijka.js.pobrane"></script>
     <section id="menu" style="display: none;">
         <section id="wybordokumentu" style="display: none;">

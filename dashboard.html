@@ -134,9 +134,9 @@
         }
 
         .header-logo {
-            width: 58px;
-            height: 58px;
-            border-radius: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -174,9 +174,10 @@
 
         .section-header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: 20px;
+            gap: 8px;
         }
 
         .section-title {
@@ -186,10 +187,54 @@
             margin: 0;
         }
 
+		.dashboard-header {
+			position: sticky;
+			top: 0;
+			width: 100%;
+			z-index: 9999;
+			
+			padding: calc(16px + env(safe-area-inset-top)) 20px 4px;
+			
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			background: #101318;
+		}
+
+		.header-left {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.header-title {
+			font-size: 34px;
+			font-weight: 700;
+			margin: 0;
+		}
+
+		.dashboard-header {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;              
+		}
+
+		.header-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;  /* not baseline */
+		}
+
         .header-actions {
-            display: flex;
-            gap: 16px;
-        }
+			display: flex;
+			justify-content: flex-end;
+			gap: 16px;
+			margin-top: 2px;       
+		}
+
+		.header-actions {
+			align-self: flex-end;   /* ← THIS moves it to the right */
+		}
 
         .header-button {
             color: var(--blue-active);
@@ -205,35 +250,26 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 16px;
-            margin-top: 20px;
+            margin-top: 0px;
         }
 
         .document-card {
-            background: linear-gradient(135deg, #1a5fb8 0%, #2b7de9 100%);
+            background-image: url('./dashboard_files/mdowod.png');
+            background-size: cover;
+            background-position: center;
+            background-color: #2b7de9;
+            background-blend-mode: multiply;
             border-radius: 24px;
             padding: 20px;
-            min-height: 240px;
+            min-height: 320px;
             position: relative;
             cursor: pointer;
             transition: transform 0.2s;
             overflow: hidden;
-        }
-
-        .document-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 12px,
-                rgba(255, 255, 255, 0.04) 12px,
-                rgba(255, 255, 255, 0.04) 24px
-            );
-            pointer-events: none;
+            
+			display: flex;      
+            justify-content: flex-end;
+            align-items: flex-start;
         }
 
         .document-card:active {
@@ -245,15 +281,16 @@
         }
 
         .document-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: rgba(255, 255, 255, 0.25);
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
         }
 
         .document-icon img {
@@ -264,49 +301,52 @@
 
         .document-title {
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 400;
             color: #ffffff;
             margin: 0;
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
+            
+			position: absolute;
+			top: calc(20px + 23px);   
+			left: 20px;
+			transform: translateY(-50%);
+			z-index: 1;
         }
 
         /* Bottom Navigation */
         .bottom-nav {
             width: 100%;
-            height: 90px;
+            height: auto;
             position: fixed;
             bottom: 0;
-            background-color: #1c1c1e;
-            border-top: 0.5px solid #38383a;
             z-index: 99;
             display: flex;
             justify-content: space-around;
             align-items: center;
             left: 0;
-            padding-bottom: env(safe-area-inset-bottom);
+            padding: 12px 0;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom));
+            background: #101318;
         }
 
         .nav-tab {
             width: 25%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 6px;
             cursor: pointer;
+            padding: 8px 0;
         }
 
         .nav-tab img {
-            height: 26px;
-            width: 26px;
+            height: 36px;
+            width: 32px;
             filter: invert(1);
         }
 
         .nav-tab span {
-            font-size: 11px;
+            font-size: 15px;
             font-weight: 500;
             color: #8e8e93;
         }
@@ -321,7 +361,7 @@
 
         @supports (-webkit-touch-callout: none) {
             .bottom-nav {
-                padding-bottom: 20px;
+                padding-bottom: calc(12px + 20px);
             }
         }
 
@@ -343,35 +383,38 @@
 
 <body>
     <div class="container">
-        <header>
-            <div class="header-logo">
-                <img src="new_logo.png" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
-            </div>
-            <img src="./dashboard_files/ab013_notifications.svg" alt="Notifications" class="notification-icon">
-        </header>
+        
+		<header class="dashboard-header">
+			<!-- Row 1: logo -->
+			<div class="header-logo">
+				<img src="new_logo.png" alt="Logo">
+			</div>
+
+			<!-- Row 2: title -->
+			<h1 class="header-title">Dokumenty</h1>
+
+			<!-- Row 3: actions, right aligned -->
+			<div class="header-actions">
+				<button class="header-button">Dostosuj</button>
+				<button class="header-button">Dodaj</button>
+			</div>
+		</header>
+
 
         <main class="main-content">
-            <div class="section-header">
-                <h1 class="section-title">Dokumenty</h1>
-                <div class="header-actions">
-                    <button class="header-button">Dostosuj</button>
-                    <button class="header-button">Dodaj</button>
-                </div>
-            </div>
-
             <div class="documents-grid">
                 <div class="document-card full-width" onclick="window.location.href='dowodnowy.html';">
+                    <h2 class="document-title">mDowód</h2>
                     <div class="document-icon">
                         <img src="new_logo_nobg.png" alt="ID">
                     </div>
-                    <h2 class="document-title">mDowód</h2>
                 </div>
             </div>
         </main>
 
         <div class="bottom-nav">
             <div class="nav-tab active" onclick="window.location.href='dashboard.html';">
-                <img src="./dashboard_files/b001_home.svg" alt="Start">
+                <img src="./dashboard_files/ad005_framed_person.svg" alt="Start">
                 <span>Dokumenty</span>
             </div>
             <div class="nav-tab" onclick="window.location.href='services.html';">
