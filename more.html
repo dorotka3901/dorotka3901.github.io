@@ -74,8 +74,8 @@
             padding: 0;
             margin: 0;
             font-family: Roboto, sans-serif;
-            background: #f5f6fb;
-            color: #131419;
+            background: #101318;
+            color: #ffffff;
         }
 
         a {
@@ -84,43 +84,73 @@
         }
 
         .BottomNav_bottomNav__JQdpA {
-            width: 100%;
-            height: 90px;
-            position: fixed;
-            bottom: 0;
-            background-color: #f5f6fb;
-            border-top: 1px solid #d6d6d6;
-            z-index: 99;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            left: 0;
-        }
+			width: 100%;
+			height: 90px;
+			min-height: 90px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 99;
 
-        .BottomNav_bnTab__WzkWH {
-            width: 20%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 10px;
-            cursor: pointer;
-        }
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
 
-        .BottomNav_bnTab__WzkWH img {
-            height: 24px;
-            margin-bottom: 4px;
-        }
+			background-color: #1f2227;
+			
 
-        .BottomNav_bnTab__WzkWH span {
-            font-size: .7em;
-            font-weight: 300;
-        }
+			padding-bottom: calc(12px + env(safe-area-inset-bottom));
+			box-sizing: border-box;
+		}
 
-        .BottomNav_activeText__6iAIF {
-            color: var(--blue-active);
-        }
+		/* Each tab */
+		.BottomNav_bnTab__WzkWH {
+			width: 25%;
+			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			gap: 6px;
+
+			font-size: 11px;      /* MATCH dashboard */
+			font-weight: 500;    /* MATCH dashboard */
+			color: #cbd5e1;
+
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		/* Icon */
+		.BottomNav_bnTab__WzkWH img {
+			width: 30px;
+			height: 26px;
+			margin-bottom: 2px;
+
+			filter: invert(1) brightness(1.8);
+		}
+
+		/* Active text */
+		.BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+
+		/* Active icon */
+		.BottomNav_bnTab__WzkWH.active img {
+			filter: invert(32%) sepia(92%) saturate(746%)
+					hue-rotate(191deg) brightness(92%) contrast(101%);
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+						 "SF Pro Display", "Helvetica Neue", Helvetica,
+						 Arial, Roboto, sans-serif;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 1.2;
+		}
 
         main {
             margin-bottom: 100px;
@@ -133,7 +163,7 @@
         }
 
         .More_cardContainer__HfxIE {
-            background-color: #fff;
+            background-color: #1f2227;
             border-radius: .4em;
             padding: 1em;
             margin-top: 20px;
@@ -163,59 +193,49 @@
             background-color: #d6d6d6;
             margin: 10px 0;
         }
+		
+		.More_leftContent__f8xyO img,
+		.More_singleCard__I4PBH > img {
+			filter: invert(1) brightness(2);
+		}
+		
+		.BottomNav_bnTab__WzkWH img {
+			filter: invert(1) brightness(2);
+		}
+		
+		.BottomNav_bnTab__WzkWH:has(.BottomNav_activeText__6iAIF) img {
+			filter: invert(32%) sepia(92%) saturate(746%) hue-rotate(191deg) brightness(92%) contrast(101%);
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			color: #949599;
+		}
+
+		.BottomNav_bnTab__WzkWH .BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+		
+		main {
+			padding-bottom: calc(90px + env(safe-area-inset-bottom));
+		}
     </style></head>
-    
-
-
-    
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-
-
-
-    
-    
-        
-
-    
 
 <body>
      <div class="BottomNav_bottomNav__JQdpA">
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;dashboard.html&#39;">
-            <img src="./more_files/ab001_home.svg" alt="dashboard">
-            <span>Start</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;documents.html&#39;">
-            <img src="./more_files/ad005_framed_person.svg" alt="documents">
+            <img src="./dashboard_files/ad005_framed_person.svg" alt="Start">
             <span>Dokumenty</span>
         </div>
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;services.html&#39;">
-            <img src="./more_files/ac001_services.svg" alt="services">
+            <img src="./dashboard_files/ac001_services.svg" alt="Usługi">
             <span>Usługi</span>
         </div>
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;qr.html&#39;">
-            <img src="./more_files/ai001_scanner_qr.svg" alt="qr">
+            <img src="./dashboard_files/ai001_scanner_qr.svg" alt="QR">
             <span>Kod QR</span>
         </div>
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;more.html&#39;">
-            <img src="./more_files/b005_more.svg" alt="more">
+            <img src="./dashboard_files/ab010_more.svg" alt="Więcej">
             <span class="BottomNav_activeText__6iAIF">Więcej</span>
         </div>
     </div>
@@ -230,7 +250,7 @@
                         <img src="./more_files/aa008_change_password.svg" alt="Zmień hasło" width="25" height="25">
                         <p style="font-weight: bold">Zmień hasło</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -238,7 +258,7 @@
                         <img src="./more_files/aa009_fingerprint.svg" alt="Logowanie biometryczne" width="25" height="25">
                         <p style="font-weight: bold">Logowanie biometryczne</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -246,7 +266,7 @@
                         <img src="./more_files/ab013_notifications.svg" alt="Powiadomienia" width="25" height="25">
                         <p style="font-weight: bold">Powiadomienia</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -254,7 +274,7 @@
                         <img src="./more_files/ag005_globe.svg" alt="Język aplikacji" width="25" height="25">
                         <p style="font-weight: bold">Język aplikacji</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -262,7 +282,7 @@
                         <img src="./more_files/ae001_published_certificate.svg" alt="Wydane certyfikaty" width="25" height="25">
                         <p style="font-weight: bold">Wydane certyfikaty</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
             </div>
 
@@ -273,7 +293,7 @@
                         <img src="./more_files/aa016_history.svg" alt="Historia aktywności" width="25" height="25">
                         <p style="font-weight: bold">Historia aktywności</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -281,7 +301,7 @@
                         <img src="./more_files/ad005_framed_person.svg" alt="Informacje prawne" width="25" height="25">
                         <p style="font-weight: bold">Informacje prawne</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
@@ -289,7 +309,7 @@
                         <img src="./more_files/coi_common_ui_ic_help.svg" alt="Pomoc techniczna" width="25" height="25">
                         <p style="font-weight: bold">Pomoc techniczna</p>
                     </div>
-                    <img src="./more_files/ic_arrow_forward_gray.svg" alt="arrow" width="24" height="24">
+                    <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="24" height="24">
                 </div>
                 <div class="More_separator__NPggk"></div>
                 <div class="More_singleCard__I4PBH">
