@@ -74,8 +74,8 @@
             padding: 0;
             margin: 0;
             font-family: Roboto, sans-serif;
-            background: #f5f6fb;
-            color: #131419;
+            background: #101318;   
+			color: #ffffff;
         }
 
         a {
@@ -113,7 +113,7 @@
         }
 
         .Qr_singleCard__iCjtA {
-            background-color: #fff;
+            background-color: #1f2227;
             border-radius: .4em;
             padding: 1em;
             justify-content: space-between;
@@ -149,47 +149,90 @@
         .Qr_secondaryText__BBj73 {
             font-weight: 300;
             font-size: .85em;
-            color: #666;
+            color: #9aa0a6;
             margin-top: 0;
         }
 
         .BottomNav_bottomNav__JQdpA {
-            width: 100%;
-            height: 90px;
-            position: fixed;
-            bottom: 0;
-            background-color: #f5f6fb;
-            border-top: 1px solid #d6d6d6;
-            z-index: 99;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            left: 0;
-        }
+			width: 100%;
+			height: 90px;
+			min-height: 90px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 99;
 
-        .BottomNav_bnTab__WzkWH {
-            width: 25%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 10px;
-        }
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
 
-        .BottomNav_bnTab__WzkWH img {
-            height: 24px;
-            margin-bottom: 4px;
-        }
+			background-color: #1f2227;
+			
 
-        .BottomNav_bnTab__WzkWH span {
-            font-size: .7em;
-            font-weight: 300;
-        }
+			padding-bottom: calc(12px + env(safe-area-inset-bottom));
+			box-sizing: border-box;
+		}
 
-        .BottomNav_activeText__6iAIF {
-            color: var(--blue-active);
-        }
+		/* Each tab */
+		.BottomNav_bnTab__WzkWH {
+			width: 25%;
+			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			gap: 6px;
+
+			font-size: 11px;      /* MATCH dashboard */
+			font-weight: 500;    /* MATCH dashboard */
+			color: #cbd5e1;
+
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		/* Icon */
+		.BottomNav_bnTab__WzkWH img {
+			width: 30px;
+			height: 26px;
+			margin-bottom: 2px;
+
+			filter: invert(1) brightness(1.8);
+		}
+
+		/* Active text */
+		.BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+
+		/* Active icon */
+		.BottomNav_bnTab__WzkWH.active img {
+			filter: invert(32%) sepia(92%) saturate(746%)
+					hue-rotate(191deg) brightness(92%) contrast(101%);
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+						 "SF Pro Display", "Helvetica Neue", Helvetica,
+						 Arial, Roboto, sans-serif;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			color: #949599;
+		}
+
+		.BottomNav_bnTab__WzkWH .BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+		
+		main {
+			padding-bottom: calc(12px + env(safe-area-inset-bottom));
+		}
 
         @media (max-width: 768px) {
             .Qr_container__HYFCF {
@@ -197,37 +240,6 @@
             }
         }
     </style></head>
-    
-
-
-    
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-
-
-
-    
-    
-        
-
-    
 
 <body>
 
@@ -243,7 +255,7 @@
                 <p class="Qr_secondaryText__BBj73">Zaloguj się lub potwierdź swoje dane.</p>
             </div>
         </div>
-        <img src="./qr_files/ic_arrow_forward_Dgray.svg" alt="arrow" width="17" height="17">
+        <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="17" height="17">
     </div>
 
     <div class="Qr_singleCard__iCjtA" onclick="window.location.href=&#39;qr.html&#39;">
@@ -254,37 +266,29 @@
                 <p class="Qr_secondaryText__BBj73">Sprawdź dokument innej osoby.</p>
             </div>
         </div>
-        <img src="./qr_files/ic_arrow_forward_Dgray.svg" alt="arrow" width="17" height="17">
+        <img src="./dowodnowy_files/arrow1.svg" alt="arrow" width="17" height="17">
     </div>
 
     <!-- Bottom Navigation -->
      <div class="BottomNav_bottomNav__JQdpA">
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;dashboard.html&#39;">
-            <img src="./qr_files/ab001_home.svg" alt="dashboard">
-            <span>Start</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;documents.html&#39;">
-            <img src="./qr_files/ad005_framed_person.svg" alt="documents">
+            <img src="./dashboard_files/ad005_framed_person.svg" alt="Start">
             <span>Dokumenty</span>
         </div>
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;services.html&#39;">
-            <img src="./qr_files/ac001_services.svg" alt="services">
+            <img src="./dashboard_files/ac001_services.svg" alt="Usługi">
             <span>Usługi</span>
         </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;qr.html&#39;">
-            <img src="./qr_files/b003_scanner_qr.svg" alt="qr">
-            <span>Kod QR</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;more.html&#39;">
-            <img src="./qr_files/ab010_more.svg" alt="more">
-            <span class="BottomNav_activeText__6iAIF">Więcej</span>
-        </div>
+        <div class="BottomNav_bnTab__WzkWH active" onclick="window.location.href='qr.html'">
+			<img src="./qr_files/b003_scanner_qr.svg" alt="qr">
+			<span class="BottomNav_activeText__6iAIF">Kod QR</span>
+		</div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='more.html'">
+			<img src="./qr_files/ab010_more.svg" alt="more">
+			<span>Więcej</span>
+		</div>
     </div>
 </div>
-
-
-
-
 
 <audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
                     <div class="sound">
