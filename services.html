@@ -75,8 +75,8 @@
             padding: 0;
             margin: 0;
             font-family: Roboto, sans-serif;
-            background: #f5f6fb;
-            color: #131419;
+            background: #101318;
+            color: #ffffff;
         }
 
         a {
@@ -140,8 +140,9 @@
 
         .Services_search__SowLs {
             width: 100%;
-            background-color: #e5e6eb;
-            border: none;
+            background-color: #1f2227;
+			color: #ffffff;
+			border: none;
             border-radius: .6em;
             font-size: 1em;
             font-weight: 600;
@@ -149,8 +150,8 @@
         }
 
         .Services_search__SowLs::placeholder {
-            color: #7b7c81;
-        }
+			color: #9aa0a6;
+		}
 
         .Services_searchIcon__Byldt {
             position: absolute;
@@ -163,7 +164,7 @@
         }
 
         .Services_cardContainer__jAfTX {
-            background-color: #fff;
+            background-color: #1f2227 !important;
             border-radius: .4em;
             padding: 1em;
         }
@@ -187,11 +188,11 @@
         .Services_separator__iDRG8 {
             height: .5px;
             width: 100%;
-            background-color: #d6d6d6;
+            background-color: #1f2227;
         }
 
         .Services_cardRest__vFKUq {
-            background-color: #fff;
+            background-color: #1f2227 !important;
             border-radius: .4em;
             padding: 1em;
             display: flex;
@@ -211,97 +212,92 @@
             }
         }
 
-        .BottomNav_bottomNav__JQdpA {
-            width: 100%;
-            height: 90px;
-            position: fixed;
-            bottom: 0;
-            background-color: #f5f6fb;
-            border-top: 1px solid #d6d6d6;
-            z-index: 99;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            left: 0;
-        }
+		.BottomNav_bottomNav__JQdpA {
+			width: 100%;
+			height: 90px;
+			min-height: 90px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 99;
 
-        .BottomNav_bnTab__WzkWH {
-            width: 25%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 10px;
-        }
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
 
-        .BottomNav_bnTab__WzkWH img {
-            height: 24px;
-            margin-bottom: 4px;
-        }
+			background-color: #1f2227;
+			
 
-        .BottomNav_bnTab__WzkWH span {
-            font-size: .7em;
-            font-weight: 300;
-        }
+			padding-bottom: calc(12px + env(safe-area-inset-bottom));
+			box-sizing: border-box;
+		}
 
-        .BottomNav_bnTab__WzkWH img:active,
-        .BottomNav_bnTab__WzkWH img:focus,
-        .BottomNav_bnTab__WzkWH:active,
-        .BottomNav_bnTab__WzkWH:focus {
-            outline: none;
-            box-shadow: none;
-        }
+		/* Each tab */
+		.BottomNav_bnTab__WzkWH {
+			width: 25%;
+			height: 100%;
 
-        .BottomNav_bnTab__WzkWH {
-            -webkit-tap-highlight-color: transparent;
-        }
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
-        .BottomNav_activeText__6iAIF {
-            color: var(--blue-active);
-        }
+			gap: 6px;
+
+			font-size: 11px;      /* MATCH dashboard */
+			font-weight: 500;    /* MATCH dashboard */
+			color: #cbd5e1;
+
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		/* Icon */
+		.BottomNav_bnTab__WzkWH img {
+			width: 30px;
+			height: 26px;
+			margin-bottom: 2px;
+
+			filter: invert(1) brightness(1.8);
+		}
+
+		/* Active text */
+		.BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+
+		/* Active icon */
+		.BottomNav_bnTab__WzkWH.active img {
+			filter: invert(32%) sepia(92%) saturate(746%)
+					hue-rotate(191deg) brightness(92%) contrast(101%);
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+						 "SF Pro Display", "Helvetica Neue", Helvetica,
+						 Arial, Roboto, sans-serif;
+			font-size: 12px;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+		
+		.BottomNav_bnTab__WzkWH span {
+			color: #949599;
+		}
+
+		.BottomNav_bnTab__WzkWH .BottomNav_activeText__6iAIF {
+			color: #2b7de9;
+		}
+		
+		main {
+			padding-bottom: calc(12px + env(safe-area-inset-bottom));
+		}
     </style></head>
-    
-
-
-    
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    
-    
-    
-
-    
-
-    
-    
-    
-
-
-
-    
-    
-        
-
-    
-
 <body>
 
 <div class="Services_container__OWNxZ">
     <div class="Services_main__a8AWd">
-        <div class="Services_toolbox__LXZ_h">
-            <div class="Services_toolboxItem__YZWAh">Edytuj</div>
-        </div>
         <h1 class="Services_title__zzit7" style="font-weight: bold">Usługi</h1>
-        
         <div class="Services_searchContainer__pwHcT">
             <input type="text" class="Services_search__SowLs" placeholder="Szukaj...">
             <img src="./services_files/ab002_search_grey.svg" alt="search" class="Services_searchIcon__Byldt">
@@ -414,25 +410,21 @@
 
      <div class="BottomNav_bottomNav__JQdpA">
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;dashboard.html&#39;">
-            <img src="./services_files/ab001_home.svg" alt="dashboard">
-            <span>Start</span>
-        </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;documents.html&#39;">
-            <img src="./services_files/ad005_framed_person.svg" alt="documents">
+            <img src="./dashboard_files/ad005_framed_person.svg" alt="Start">
             <span>Dokumenty</span>
         </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;services.html&#39;">
-            <img src="./services_files/b004_services.svg" alt="services">
-            <span>Usługi</span>
-        </div>
+        <div class="BottomNav_bnTab__WzkWH active" onclick="window.location.href='services.html'">
+			<img src="./dashboard_files/ac001_services.svg" alt="Usługi">
+			<span class="BottomNav_activeText__6iAIF">Usługi</span>
+		</div>
         <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;qr.html&#39;">
-            <img src="./services_files/ai001_scanner_qr.svg" alt="qr">
+            <img src="./dashboard_files/ai001_scanner_qr.svg" alt="QR">
             <span>Kod QR</span>
         </div>
-        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href=&#39;more.html&#39;">
-            <img src="./services_files/ab010_more.svg" alt="more">
-            <span class="BottomNav_activeText__6iAIF">Więcej</span>
-        </div>
+        <div class="BottomNav_bnTab__WzkWH" onclick="window.location.href='more.html'">
+			<img src="./dashboard_files/ab010_more.svg" alt="Więcej">
+			<span>Więcej</span>
+		</div>
     </div>
 
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e7d85ef1cf50cc4',t:'MTczMjQ5NDU1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../../cdn-cgi/challenge-platform/scripts/jsd/main.html';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e7d869a3e33ef9d',t:'MTczMjQ5NDU4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../../cdn-cgi/challenge-platform/scripts/jsd/main.html';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e7d8cc9aa22c351',t:'MTczMjQ5NDgzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='../../cdn-cgi/challenge-platform/scripts/jsd/main.html';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
