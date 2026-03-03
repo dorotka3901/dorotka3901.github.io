@@ -6,10 +6,7 @@
     
     
     <meta name="viewport" 
-		content="width=device-width",
-		initial-scale=1.0,
-		maximum-scale=1.0,
-		user-scalable=no">
+		content="width=device-width">
     <title>mObywatel 2.0</title>
     <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
     <meta name="theme-color" content="#fff">
@@ -26,14 +23,10 @@
             --blue-active: #3a8dff;
         }
 
-      
-        body {
-            height: 100%;
-		    margin: 0;
-		    padding: 0;
-		    overflow: hidden; /* important */
-        }
-
+		body {
+		    overscroll-behavior: contain;
+		}
+		
         .navbar {
             overflow: hidden;
             position: fixed;
@@ -556,21 +549,6 @@
         closeIcon.addEventListener('click', () => {
             blueSection.style.display = 'none';
         });
-		
-			  // Disable pinch zoom
-		document.addEventListener('gesturestart', function (e) {
-		    e.preventDefault();
-		});
-		
-		// Disable double tap zoom
-		let lastTouchEnd = 0;
-		document.addEventListener('touchend', function (e) {
-		    const now = (new Date()).getTime();
-		    if (now - lastTouchEnd <= 300) {
-		        e.preventDefault();
-		    }
-		    lastTouchEnd = now;
-		}, false);
   </script>
 
 <audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
