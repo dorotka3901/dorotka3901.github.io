@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" 
+		content="width=device-width",
+		initial-scale=1.0,
+		maximum-scale=1.0,
+		user-scalable=no">
     <title>mObywatel 2.0</title>
     <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
     <meta name="theme-color" content="#fff">
@@ -24,7 +28,13 @@
 
       
         body {
-            overscroll-behavior: contain;
+            height: 100%;
+		    margin: 0;
+		    padding: 0;
+		    overflow-x: hidden;
+			
+			overscroll-behavior: none;
+			touch-action: manipulation;
         }
 
         .navbar {
