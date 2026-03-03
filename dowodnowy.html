@@ -31,10 +31,7 @@
             height: 100%;
 		    margin: 0;
 		    padding: 0;
-		    overflow-x: hidden;
-			
-			overscroll-behavior: none;
-			touch-action: manipulation;
+		    overflow: hidden; /* important */
         }
 
         .navbar {
@@ -559,6 +556,21 @@
         closeIcon.addEventListener('click', () => {
             blueSection.style.display = 'none';
         });
+		
+			  // Disable pinch zoom
+		document.addEventListener('gesturestart', function (e) {
+		    e.preventDefault();
+		});
+		
+		// Disable double tap zoom
+		let lastTouchEnd = 0;
+		document.addEventListener('touchend', function (e) {
+		    const now = (new Date()).getTime();
+		    if (now - lastTouchEnd <= 300) {
+		        e.preventDefault();
+		    }
+		    lastTouchEnd = now;
+		}, false);
   </script>
 
 <audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
